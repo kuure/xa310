@@ -64,9 +64,7 @@
 				}
 			}
 
-			let randomNumbers = [170, 45, 75, 90, 802, 24, 2, 66];
-			radixSort(randomNumbers);
-			console.log(randomNumbers);
+
 
 
 
@@ -76,11 +74,14 @@
 
 
 			// Example usage:
+
+			console.time("sorting")
+
 			console.log("randomNumber array: ", randomNumbers); // output
 			const sortedNumbers = radixSort(randomNumbers);
 			console.log("sortedNumbers array: ", sortedNumbers); // output
 
-
+			console.timeEnd("sorting")
 
 		</script>
 
