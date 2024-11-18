@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+
+	<title>Recursive and Non-Recursive Fibonacci Sequence</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+	<h1>Recursive and Non-Recursive Fibonacci Sequence</h1>
+
+
+	<p>The Fibonacci sequence is the series of numbers where each number is
+	the sum of the two previous numbers - 0, 1, 1, 2, 3, 5, 8, 13, and so
+	on.</p>
+
+	<p>This page contains a JavaScript function that gives you the value
+	based on running the calculation X number of times; for example calling
+	<code>fibonacci(4)</code> gives you the answer of 5, an argument of 5
+	gives an answer of 8, etc. </p>
+
+
+
+<script>
+
+function fibonacci(num){
+
+	let a = 1
+	let b = 0
+	let temp;
+
+	while (num >= 0){
+		temp = a;
+		a = a + b;
+		b = temp;
+		num--;
+	}
+	return b;
+}
+
+
+// these numbers grow quickly...
+console.log(fibonacci(5))
+console.log(fibonacci(10))
+console.log(fibonacci(20))
+
+
+
+
+// Your job is to get the same thing happening below, but using a RECURSIVE algorithm 
+
+// Then add your writing in the README.txt file
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

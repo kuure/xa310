@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+	<head>
+
+		<title></title>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="">
+		<link rel="shortcut icon" href="">
+
+	</head>
+
+	<body>
+
+		<script>
+
+			const ingredients = {
+				size: ["small", "medium", "large", "x-large", "party size"],
+				crust: ["deep dish", "thin crust", "regular"],
+				sauce: ["tomato", "pesto", "alfredo"],
+				vegetables: ["mushrooms", "onions", "green peppers", "tomatoes", "black olives"],
+				meats: ["pepperoni", "sausage", "salami", "bacon"]
+			};
+
+			// Helper function to get all combinations of 2 toppings from vegetables and meats
+			function getToppingCombinations(vegetables, meats) {
+				const allToppings = [...vegetables, ...meats];
+				const combinations = [];
+
+				for (let i = 0; i < allToppings.length; i++) {
+					for (let j = i + 1; j < allToppings.length; j++) {
+						combinations.push([allToppings[i], allToppings[j]]);
+					}
+				}
+
+				return combinations;
+			}
+
+			const toppingCombinations = getToppingCombinations(ingredients.vegetables, ingredients.meats);
+
+			// Generate and print all unique combinations
+			ingredients.size.forEach(size => {
+				ingredients.crust.forEach(crust => {
+					ingredients.sauce.forEach(sauce => {
+						toppingCombinations.forEach(toppings => {
+							console.log(`Size: ${size}, Crust: ${crust}, Sauce: ${sauce}, Toppings: ${toppings.join(" and ")}`);
+						});
+					});
+				});
+			});
+
+		</script>
+
+	</body>
+</html>
+
