@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <title>JavaScript Object Constructor</title>
+  <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/stylesheet.css">
+
+</head>
+
+<body>
+
+
+<h1>Object Constructor Function</h1>
+
+<p>Check the console to see examples.</p>
+
+
+<script>
+
+/* 
+	function Person
+	this is a constructor function, which
+	by custom starts with a capital letter
+
+	it is passed two parameters:
+		- a string for the first name
+		- a string for the second name
+*/
+
+
+function Person(first,last) {
+		
+	// create a new person object with these values
+	this.firstname = first;
+	this.lastname = last;
+
+	// the value for pet is the result of a function
+	this.pet = function(){
+
+		// an array of four pets
+		let pets = ["Dog","Cat","Hamster","Fish"];
+
+		// return a random pet from the array
+		return pets[Math.floor(Math.random()*pets.length)];
+	}	
+}
+
+
+// instantiate a new object
+let personOne = new Person("Jeff","Kuure");
+
+// log the object to the console
+console.log(personOne);
+
+
+// log the individual parts 
+console.log(personOne.firstname);
+console.log(personOne.lastname);
+console.log(personOne.pet());
+
+</script>
+
+</body>
+</html>
