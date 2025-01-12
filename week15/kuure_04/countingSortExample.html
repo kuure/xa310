@@ -42,6 +42,10 @@
 		// xLargeArray = 100000 random numbers
 		const xLargeArray= makeArray(100000)
 
+				// xxLargeArray = 100000 random numbers
+				const xxLargeArray= makeArray(1000000)
+
+
 		// the counting sort algorithm
 		// it accepts an array as an argument and returns the same array sorted numerically
 		function countingSort(inputArr) {
@@ -104,12 +108,17 @@
 		console.time("large counting sort")
 		countingSort(largeArray)
 		console.timeEnd('large counting sort')
+
+				// same thing as above with the 10000 item array
+				console.time("xlarge counting sort")
+		countingSort(xLargeArray)
+		console.timeEnd('xlarge counting sort')
 		
 
 		// same thing as above with the 100000 item array
-		console.time("xLarge YOURSORTINGALGORITHM")
-		YOURSORTINGALGORITHM(xLargeArray)
-		console.timeEnd("xLarge YOURSORTINGALGORITHM")
+		console.time("xxLarge counting sort")
+		countingSort(xxLargeArray)
+		console.timeEnd("xxLarge counting sort")
 
 
 
