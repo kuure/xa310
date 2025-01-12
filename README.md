@@ -1,3 +1,7 @@
-# XA 310 Examples
+# XA 310 Class Examples
 
-Any in-class examples or files for XA 310, arranged in folders by week of semester
+This repository will contain:
+
+- Any code examples from class in a folder corresponding to the week of
+  the semester
+- Any lecture notes in markdown format in the `lecture-notes` folder
