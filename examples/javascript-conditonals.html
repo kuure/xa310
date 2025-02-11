@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<title>JavaScript Conditional Statements</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+		<h1>JavaScript Conditional Statements</h1>
+
+		<p>Remember to view the output in your browser's JavaScript console:
+
+		<ul>
+			<li>In Firefox, select <strong>Tools -> Web Developer -> Web Console</strong></li>
+			<li>In Chrome, select <strong>View -> Developer -> JavaScript Console</strong</li>
+		</ul>
+
+		<script>
+
+
+			// make some variables to use
+
+			const course = "XA 310"
+			const day = "Wednesday"
+			const time = 11
+			const school = "Michigan State University"
+
+
+			// print them to the console
+			console.log("course:", course)
+			console.log("day:", day)
+			console.log("time:", time)
+			console.log("school:", school)
+
+
+
+			// basic 'if' statement
+			if(course === "XA 310") {
+				console.log("Course is equal to XA 310")
+			}
+
+
+			// if / else statement 
+			if(course === "WRA 410") {
+				console.log("Course is WRA 410")
+			}
+			else {
+				console.log("Course is NOT WRA 410")
+			}
+
+
+			// if / else if / else statement
+			if(time <= 8) {
+				console.log("Time is less than or equal to 8")
+			}
+			else if(time > 8 && time < 11) {
+				console.log("Time is greater than 8 and also less than 11")
+			}
+			else {
+				console.log("Time must be 11 or greater")
+			}
+
+
+
+
+			// now, make you own:
+
+
+
+			/* 
+			1. print "Go Green" to the console if the name of the school
+			   contains the word "state"
+			*/
+
+
+
+
+			/*
+			2. if the name of the week is NOT 'Tuesday', print "not tuesday"
+			   to the console
+			*/
+
+
+
+
+			/* 
+			3. if the number of characters in the day variable is greater
+			   than 5, AND the name of the course starts with 'XA', print
+			   both of those variable names to the console
+			*/    
+
+
+
+
+			/* 
+			4. if the time of day is divisible by two, print "even"
+	       if it isn't print "odd"
+			*/    
+
+
+
+
+
+
+
+
+
+
+
+		</script>
+
+
+
+
+	</body>
+</html>
