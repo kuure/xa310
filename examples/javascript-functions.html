@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html lang="en-US">
+
+<head>
+
+	<title>JavaScript Functions</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+<body>
+
+
+<script>
+
+// two numbers
+console.log(betterAddNumbers(4,5))
+
+// a string and a number
+console.log(betterAddNumbers("4",5))
+
+// a number and a string
+console.log(betterAddNumbers(4,"5"))
+
+
+
+
+function betterAddNumbers(arg1,arg2) {
+	if(!isNaN(arg1) && typeof(arg1) !== "number") {
+		return("parameter one must be a number")
+	}
+	else if(!isNaN(arg2) && typeof(arg2) !== "number") {
+		return("parameter two must be a number")
+	}
+	else {
+		return(arg1 + arg2)
+	}
+}
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
