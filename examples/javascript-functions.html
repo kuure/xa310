@@ -57,7 +57,8 @@ function betterAddNumbers(arg1,arg2) {
 	return(arg1 + arg2)
  */
 
-	/*
+	
+  /*
 	// one if statement
 	if(typeof(arg1) !== "number" || typeof(arg2 !== "number")) {
 		return("Both args must be a number")
@@ -76,16 +77,34 @@ const pokemonArray = [ "pikachu", "squirtle", "charmander", "chespin", "piplup",
 
 // can you write a function that returns a random element 
 // from an array passed in as an argument?
-function randomArrayElement() {
-
+function randomArrayElement(arr) {
+	let length = arr.length
+	let index = Math.floor(Math.random() * length)
+	let element = arr[index]
+	return(element)
 }
 
 
 // can you write a function that converts that takes two arguments: 
 // - a number representing a temperature
 // - string that represents a scale to convert the temperature TO - either celcius or farenheit
-function temperatureConverter() {
+function temperatureConverter(temp,scale) {
 
+	if(typeof(temp) !== "number") {
+		return("Temp musb be a number")
+	}
+
+	if(scale.toLowerCase().startsWith('f')) {
+		newTemp = (temp * 9/5) + 32
+		return(newTemp)
+	}
+	else if(scale.toLowerCase().startsWith('c')) {
+		newTemp = (temp - 32) * 5/9
+		return(newTemp)
+	}
+	else {
+		return("error")
+	}
 }
 
 
