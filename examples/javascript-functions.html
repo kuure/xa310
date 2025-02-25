@@ -29,79 +29,65 @@ console.log(betterAddNumbers(4,"5"))
 // two strings
 console.log(betterAddNumbers("4","5"))
 
-function betterAddNumbers(arg1,arg2) {
 
-	// if / else if / else
-	if(typeof(arg1) !== "number") {
-		return("arg1 must be a number")
-	}
-	else if(typeof(arg2) !== "number") {
-		return("arg2 must be a number")
-	}
-	else {
-		return(arg1 + arg2)
-	}
-
-
-
-	/*
-	// two if statements
-	if(typeof(arg1) !== "number") {
-		return("arg1 must be a number")
-	}
-		
-	if(typeof(arg2) !== "number") {
-		return("arg2 must be a number")
-	}
-
-	return(arg1 + arg2)
- */
-
-	
-  /*
-	// one if statement
-	if(typeof(arg1) !== "number" || typeof(arg2 !== "number")) {
-		return("Both args must be a number")
-	}
-	return(arg1 + arg2)
- */
-
-
-
+// check if a number is valid - returns "true" or "false"
+function isValidNumber(param) { 
+  return typeof param === 'number' && !isNaN(param)
 }
+
+function betterAddNumbers(x,y) { 
+  if(isValidNumber(x) && isValidNumber(y)) {
+    return x + y
+  }
+	else {
+		return "args must be numbers"
+	}
+}
+
 
 
 // our pokemon array
 const pokemonArray = [ "pikachu", "squirtle", "charmander", "chespin", "piplup", "mamoswine", "snorlax", "slowpoke" ]
 
 
-// can you write a function that returns a random element 
-// from an array passed in as an argument?
+// a function that returns a random element from an array passed in as an argument
 function randomArrayElement(arr) {
 	let length = arr.length
 	let index = Math.floor(Math.random() * length)
 	let element = arr[index]
 	return(element)
+
+	/* you could also do this all on one line */
+	// return arr[Math.floor(Math.random() * arr.length)]
+
 }
 
 
-// can you write a function that converts that takes two arguments: 
+// a function that converts temperatures between F and C that takes two arguments: 
 // - a number representing a temperature
 // - string that represents a scale to convert the temperature TO - either celcius or farenheit
 function temperatureConverter(temp,scale) {
 
+	// check our inputs
 	if(typeof(temp) !== "number") {
-		return("Temp musb be a number")
+		return("Temp must be a number")
 	}
 
+	if(typeof(scale) !== "string") {
+		return("Scale must be a string")
+	}
+
+	// if converting to farenheit
 	if(scale.toLowerCase().startsWith('f')) {
 		newTemp = (temp * 9/5) + 32
 		return(newTemp)
 	}
+	// if converting to celcius
 	else if(scale.toLowerCase().startsWith('c')) {
 		newTemp = (temp - 32) * 5/9
 		return(newTemp)
 	}
+	// anything else is an error
 	else {
 		return("error")
 	}
