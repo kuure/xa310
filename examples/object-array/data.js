@@ -62,7 +62,7 @@ const people = [
 
 {
 	firstName:"Yaowen",
-	lastname:"Cui",
+	lastName:"Cui",
 	year:2025,
 	age:22,
 	siblings:true,
@@ -104,7 +104,7 @@ const people = [
 
 {
 	firstName: "Dre",
-	LastName: "Holmes",
+	lastName: "Holmes",
 	favoriteColor: "Green",
 	year:2026,
 	pet:false,
@@ -117,7 +117,7 @@ const people = [
 	year: "Junior",
 	age: 22,
 	siblings:true,
-	Pets:false,
+	pets:false,
 	favoriteColor: "blue"
 },
 
@@ -206,4 +206,3 @@ const people = [
 },
 
 ]
-
