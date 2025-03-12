@@ -65,7 +65,7 @@ const people = [
 	lastname:"Cui",
 	year:2025,
 	age:22,
-	Siblings:true,
+	siblings:true,
 	pets:false,
 	favoriteColor:"Black"
 },
@@ -88,7 +88,7 @@ const people = [
 	year: "Sophomore",
 	age: 19,
 	siblings: true,
-	Pets: true,
+	pets: true,
 	favoriteColor: "Blue"
 },
 
@@ -133,12 +133,12 @@ const people = [
 
 {
 	firstName: "Alex",
-	LastName: "Hadous", 
-	Year: 2003,
-	Age: 21,
-	Siblings: true, 
-	Pets: true, 
-	FavoriteColor: "green"
+	lastName: "Hadous", 
+	year: 2003,
+	age: 21,
+	siblings: true, 
+	pets: true, 
+	favoriteColor: "green"
 },
 
 {
@@ -179,6 +179,7 @@ const people = [
 	year: 2026,
 	age: 20,
 	pets: false,
+	siblings: false,
 	favoriteColor: "pink"
 },
 
@@ -200,7 +201,9 @@ const people = [
 	year: "Senior",
 	age: 21,
 	pets: true,
+	siblings: false,
 	favoriteColor: "Gray"
 },
 
 ]
+
