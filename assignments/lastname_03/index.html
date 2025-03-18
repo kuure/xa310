@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+	<title>Pizza Orderer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<h1> Pizza Orderer</h1>
+
+<p>Create pizza orders and log them to the console.</p>
+
+<script>
+
+// the pizza information
+const pizza = {
+  "crust" : ["thin","stuffed","thick","detroit style","gluten free"],
+  "sauce" : ["tomato", "garlic", "pesto", "barbeque", "no sauce", "ranch"],
+  "cheese": ["cheddar", "fontina", "gouda", "jack", "mozzarella"],
+  "meats": ["ham", "sausage", "chicken", "pepperoni", "bacon"],
+  "vegetables":["basil", "mushrooms", "corn", "pineapple", "olives", "peppers","tomatoes", "onions"],
+	"price" : {
+		"small" : 10,
+		"medium" : 15,
+		"large" : 20
+	},
+	"toppingPrices" : {
+		"meat" : 2.00,
+		"vegetables" : 1.50
+	}
+}
+
+
+
+// this is a helper function - call it with an array and a number as
+// arguments and it will return that many random elements from the array
+function getRandomItems(array, x) {
+	if (x > array.length) {
+		console.log("The number of items to extract cannot exceed the array length.")
+	}
+	// Create a copy to avoid modifying the original array
+	const shuffledArray = [...array] 
+	let i,j
+	for (i = shuffledArray.length - 1; i > 0; i--) {
+		j = Math.floor(Math.random() * (i + 1))
+		// Swap elements
+		[shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]]
+	}
+	return shuffledArray.slice(0, x);
+}
+
+
+/*
+
+you will need to create JavaScript objects with the following
+properties:
+
+----------------------
+Pizza: string
+----------------------
+"crust" : string,
+"sauce" : string,
+"cheese" : string,
+"meats" : array,
+"vegetables" : array,
+"price" : number
+----------------------
+
+*/
+
+// pizzaOne needs one crust, one cheese, one sauce, three meats,
+// and two vegetables with the price calculated accordingly
+const pizzaOne = {
+
+}
+console.log(pizzaOne)
+
+
+
+// pizzaTwo needs one crust, one cheese, one sauce, one meat,
+// and three vegetables with the price calculated accordingly
+const pizzaTwo = {
+
+}
+console.log(pizzaTwo)
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
