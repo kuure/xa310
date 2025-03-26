@@ -39,18 +39,16 @@ const pizza = {
 // this is a helper function - call it with an array and a number as
 // arguments and it will return that many random elements from the array
 function getRandomItems(array, x) {
-	if (x > array.length) {
-		console.log("The number of items to extract cannot exceed the array length.")
-	}
-	// Create a copy to avoid modifying the original array
-	const shuffledArray = [...array] 
-	let i,j
-	for (i = shuffledArray.length - 1; i > 0; i--) {
-		j = Math.floor(Math.random() * (i + 1))
-		// Swap elements
-		[shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]]
-	}
-	return shuffledArray.slice(0, x);
+	const shuffled = array
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
+	return shuffled.slice(0, x);
+}
+
+
+function calculatePrice(size,meat,veg) {
+	return pizza.price[size] + pizza.toppingPrices.meat * meat + pizza.toppingPrices.vegetables * veg
 }
 
 
@@ -75,7 +73,12 @@ Pizza: string
 // pizzaOne needs to be a small pizza with one crust, one cheese, one
 // sauce, three meats, and two vegetables with the price calculated accordingly
 const pizzaOne = {
-
+	"crust": getRandomItems(pizza.crust,1),
+	"sauce": getRandomItems(pizza.sauce,1),
+	"cheese": getRandomItems(pizza.cheese,1),
+	"meats": getRandomItems(pizza.meats,3),
+	"vegetables": getRandomItems(pizza.vegetables,2),
+	"price" : calculatePrice("small", 3, 2)
 }
 console.log(pizzaOne)
 
