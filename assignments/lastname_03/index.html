@@ -47,11 +47,6 @@ function getRandomItems(array, x) {
 }
 
 
-function calculatePrice(size,meat,veg) {
-	return pizza.price[size] + pizza.toppingPrices.meat * meat + pizza.toppingPrices.vegetables * veg
-}
-
-
 /*
 
 you will need to create JavaScript objects with the following
@@ -73,12 +68,7 @@ Pizza: string
 // pizzaOne needs to be a small pizza with one crust, one cheese, one
 // sauce, three meats, and two vegetables with the price calculated accordingly
 const pizzaOne = {
-	"crust": getRandomItems(pizza.crust,1),
-	"sauce": getRandomItems(pizza.sauce,1),
-	"cheese": getRandomItems(pizza.cheese,1),
-	"meats": getRandomItems(pizza.meats,3),
-	"vegetables": getRandomItems(pizza.vegetables,2),
-	"price" : calculatePrice("small", 3, 2)
+
 }
 console.log(pizzaOne)
 
