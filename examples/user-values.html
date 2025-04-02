@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en-US">
+
+<head>
+
+	<title>Getting Values From Users</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+<body>
+
+<h1>Getting Values From Users</h1>
+
+
+<input type="text" class="inputBox">
+
+
+<div class="container"></div>
+
+
+<script>
+
+	// first, get a value using the built-in prompt
+	const promptInput = prompt("Who Are You?","your name")
+
+	// now, you can use it anywhere in your code
+	console.log(promptInput)
+
+
+
+	// second, get one using the html <input> element 
+
+	// find the element in the HTML above and assign it to a variable
+	const textInput = document.querySelector(".inputBox")
+
+	// find the empty div there too
+	const container = document.querySelector(".container")
+
+	// now listen for someone to enter text
+	textInput.addEventListener("input", ()=> {
+		// log the .value
+		console.log(textInput.value)
+		// or set it as the "innerHTML" property of the <div> 
+		container.innerHTML = textInput.value
+	})
+
+
+</script>
+
+</body>
+
+</html>
