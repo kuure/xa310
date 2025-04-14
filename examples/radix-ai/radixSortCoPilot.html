@@ -1,0 +1,94 @@
+<!doctype html>
+
+<html lang="en-US">
+
+	<head>
+
+		<title>Programming with AI</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	</head>
+
+	<body>
+
+
+		<script>
+
+			// an array of 100 randomized numbers
+			const randomNumbers = [92,97,23,22,50,32,29,99,46,86,38,94,8,59,68,70,5,39,4,48,19,34,72,91,49,44,42,30,47,84,87,14,1,57,90,67,75,28,83,0,37,93,24,26,3,96,62,52,78,95,27,36,88,33,81,76,69,77,45,74,58,53,31,60,55,85,7,66,43,80,2,15,17,9,6,98,20,40,79,11,25,51,64,61,12,21,18,73,89,71,10,56,82,63,16,41,54,65,35,13]
+
+
+			// here is where your AI sorting algorithm will go
+
+
+			function radixSort(arr) {
+				let max = getMax(arr);
+				for (let exp = 1; Math.floor(max / exp) > 0; exp *= 10) {
+					countingSort(arr, exp);
+				}
+			}
+
+			function getMax(arr) {
+				let max = arr[0];
+				for (let i = 1; i < arr.length; i++) {
+					if (arr[i] > max) {
+						max = arr[i];
+					}
+				}
+				return max;
+			}
+
+			function countingSort(arr, exp) {
+				let output = new Array(arr.length);
+				let count = new Array(10).fill(0);
+
+				for (let i = 0; i < arr.length; i++) {
+					let index = Math.floor(arr[i] / exp) % 10;
+					count[index]++;
+				}
+
+				for (let i = 1; i < 10; i++) {
+					count[i] += count[i - 1];
+				}
+
+				for (let i = arr.length - 1; i >= 0; i--) {
+					let index = Math.floor(arr[i] / exp) % 10;
+					output[count[index] - 1] = arr[i];
+					count[index]--;
+				}
+
+				for (let i = 0; i < arr.length; i++) {
+					arr[i] = output[i];
+				}
+			}
+
+
+
+
+
+
+
+
+
+
+			// Example usage:
+
+			console.time("sorting")
+
+			console.log("randomNumber array: ", randomNumbers); // output
+			const sortedNumbers = radixSort(randomNumbers);
+			console.log("sortedNumbers array: ", sortedNumbers); // output
+
+			console.timeEnd("sorting")
+
+		</script>
+
+
+
+
+
+
+	</body>
+</html>
