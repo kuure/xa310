@@ -42,7 +42,7 @@
 		const xLargeArray= makeArray(100000)
 
 		// xxLargeArray = 1000000 random numbers
-		// const xxLargeArray= makeArray(1000000)
+		const xxLargeArray= makeArray(5000000)
 
 
 
@@ -136,9 +136,9 @@
 		console.timeEnd("xLarge radixSort")
 
 		// finally, with the 1000000 item array
-		// console.time("xxLarge radixSort")
-		// radixSort(xxLargeArray)
-		// console.timeEnd("xxLarge radixSort")
+		console.time("xxLarge radixSort")
+		radixSort(xxLargeArray)
+		console.timeEnd("xxLarge radixSort")
 
 
 

@@ -17,13 +17,38 @@
 
 <script>
 
+const nums = [12,10,2,3,1,7,11,5,9,6,16,15,4,14,8,13,19,17,18,20]
 
-	const nums = [12,10,2,3,1,7,11,5,9,6,16,15,4,14,8,13,19,17,18,20]
+// Define a function called bubbleSort that takes an array as input
+function bubbleSort(arr) {
 
-	function bubbleSort(arr) {
+	// Get the length of the array
+	let n = arr.length;
 
+	// Outer loop - runs from the beginning of the array to the end
+	for (let i = 0; i < n - 1; i++) {
+
+		// Inner loop - compares each pair of adjacent elements
+		for (let j = 0; j < n - i - 1; j++) {
+
+			// Check if the current element is greater than the next element
+			if (arr[j] > arr[j + 1]) {
+
+				// If so, swap them using a temporary variable
+				let temp = arr[j];       // Store current element in temp
+				arr[j] = arr[j + 1];     // Move next element to current position
+				arr[j + 1] = temp;       // Move temp (original current) to next position
+
+			}
+
+		}
 
 	}
+
+	// Return the sorted array
+	return arr;
+}
+
 
 
 </script>
