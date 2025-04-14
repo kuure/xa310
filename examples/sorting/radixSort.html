@@ -4,7 +4,7 @@
 
 	<head>
 
-		<title>XA 310 Assignment 04</title>
+		<title>XA 310 Assignment 05</title>
 
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,146 +14,172 @@
 	<body>
 
 
-		<h1>XA 310 Assignment 04</h1>
+		<h1>XA 310 Assignment 05</h1>
 
 		<h2>Sorting Algorithm</h2>
 
-		<p>Put your assigned algorithm into the JavaScript code in the script tag.</p>
-
-		<p>Change 'radixSort' to the name of your actual sorting algorithm  in proper JavaScript camel case: something like 'bubbleSort' or 'insertionSort'.</p>
+		<p>Put your assigned algorithm into the JavaScript code in the script
+		tag and name everything correctly to get it working.</p>
 
 
 		<script>
 
 
-			// create the test arrays - these call the makeArray() function at the end of
-			// this script which creates a randomized array of numbers 
+		// create the test arrays - these call the makeArray() function at the end of
+		// this script which creates a randomized array of numbers 
 
 
-			// smallArray = 100 random numbers
-			const smallArray = makeArray(100)
+		// smallArray = 100 random numbers
+		const smallArray = makeArray(100)
 
-			// mediumArray = 1000 random numbers
-			const mediumArray= makeArray(1000)
+		// mediumArray = 1000 random numbers
+		const mediumArray= makeArray(1000)
 
-			// largeArray = 10000 random numbers
-			const largeArray= makeArray(10000)
+		// largeArray = 10000 random numbers
+		const largeArray= makeArray(10000)
 
-			// xLargeArray = 100000 random numbers
-			const xLargeArray= makeArray(100000)
+		// xLargeArray = 100000 random numbers
+		const xLargeArray= makeArray(100000)
 
-			// xxLargeArray = 1000000 random numbers
-			const xxLargeArray= makeArray(1000000)
-
-
-
-			// your sorting algorithm goes here
-			// it must accept an array as an argument and return the array sorted numerically
-			// please change the name to something more appropriate
+		// xxLargeArray = 1000000 random numbers
+		// const xxLargeArray= makeArray(1000000)
 
 
-			function radixSort(arr) {
-				// Helper function to get the digit at a specific place
-				function getDigit(num, place) {
-					return Math.floor(Math.abs(num) / Math.pow(10, place)) % 10;
-				}
 
-				// Helper function to determine the number of digits in a number
-				function digitCount(num) {
-					return Math.floor(Math.log10(Math.abs(num))) + 1;
-				}
+		/* 
 
-				// Helper function to find the maximum number of digits in the array
-				function mostDigits(nums) {
-					let maxDigits = 0;
-					for (let num of nums) {
-						maxDigits = Math.max(maxDigits, digitCount(num));
-					}
-					return maxDigits;
-				}
+		YOUR SORTING ALGORITHM GOES HERE
 
-				const maxDigitCount = mostDigits(arr);
-				for (let k = 0; k < maxDigitCount; k++) {
-					// Create buckets for each digit (0 to 9)
-					const digitBuckets = Array.from({ length: 10 }, () => []);
+		it must accept an array as an argument and 
+		return the a copy of the array sorted numerically
 
-					// Place each number in the corresponding bucket based on its k-th digit
-					for (let num of arr) {
-						const digit = getDigit(num, k);
-						digitBuckets[digit].push(num);
-					}
+		please change the name to your assigned algorithm
 
-					// Flatten the buckets back into the array
-					arr = [].concat(...digitBuckets);
-				}
+		*/
 
-				return arr;
+
+		function radixSort(inputArr) {
+
+			const returnArray = []
+
+			// Helper function to get the digit at a specific place
+			function getDigit(num, place) {
+				return Math.floor(Math.abs(num) / Math.pow(10, place)) % 10;
 			}
 
-
-
-			// call your function once for each of the arrays and time how
-			// long each takes 
-
-			// remember to change the name to match the function name
-			// you used above
-
-			// console.time() uses a label to keep track of what you're timing
-			console.time("small radixSort")
-
-			// call your function with the small array
-			radixSort(smallArray)
-
-			// this ends the timer with the matching label from above
-			console.timeEnd("small radixSort")
-
-
-			// same thing as above with the 1000 item array
-			console.time("medium radixSort")
-			radixSort(mediumArray)
-			console.timeEnd("medium radixSort")
-
-
-			// same thing as above with the 10000 item array
-			console.time("large radixSort")
-			radixSort(largeArray)
-			console.timeEnd("large radixSort")
-
-
-			// same thing as above with the 100000 item array
-			console.time("xLarge radixSort")
-			radixSort(xLargeArray)
-			console.timeEnd("xLarge radixSort")
-
-			// same thing as above with the 1000000 item array
-			console.time("xxLarge radixSort")
-			radixSort(xxLargeArray)
-			console.timeEnd("xxLarge radixSort")
-
-
-
-			// You don't need to touch this; this is the function that gets called above
-			// to generate the arrays of randomized numbers
-			function makeArray(number) {
-				let array = []
-				for (let i=0; i < number; ++i) {
-					array[i]=i;
-				}
-
-				let tmp, current, top = array.length;
-
-				if(top) {
-					while(--top) {
-						current = Math.floor(Math.random() * (top + 1));
-						tmp = array[current];
-						array[current] = array[top];
-						array[top] = tmp;
-					}
-				}
-				return array;
+			// Helper function to determine the number of digits in a number
+			function digitCount(num) {
+				return Math.floor(Math.log10(Math.abs(num))) + 1;
 			}
 
-		</script>
+			// Helper function to find the maximum number of digits in the array
+			function mostDigits(nums) {
+				let maxDigits = 0;
+				for (let num of nums) {
+					maxDigits = Math.max(maxDigits, digitCount(num));
+				}
+				return maxDigits;
+			}
+
+			const maxDigitCount = mostDigits(inputArr);
+			for (let k = 0; k < maxDigitCount; k++) {
+				// Create buckets for each digit (0 to 9)
+				const digitBuckets = Array.from({ length: 10 }, () => []);
+
+				// Place each number in the corresponding bucket based on its k-th digit
+				for (let num of inputArr) {
+					const digit = getDigit(num, k);
+					digitBuckets[digit].push(num);
+				}
+
+				// Flatten the buckets back into the array
+				returnArr = [].concat(...digitBuckets);
+			}
+
+			// return your new sorted algorithm here:
+			return returnArr;
+		}
+
+
+
+		// call your function once for each of the arrays and time how
+		// long each takes 
+
+		// remember to change the name to match the function name
+		// you used above
+
+		// console.time() uses a label to keep track of what you're timing
+		console.time("small radixSort")
+
+		// call your function with the small array
+		radixSort(smallArray)
+
+		// this ends the timer with the matching label from above
+		console.timeEnd("small radixSort")
+
+
+		// same thing as above with the 1000 item array
+		console.time("medium radixSort")
+		radixSort(mediumArray)
+		console.timeEnd("medium radixSort")
+
+
+		// same thing as above with the 10000 item array
+		console.time("large radixSort")
+		radixSort(largeArray)
+		console.timeEnd("large radixSort")
+
+
+		// same thing as above with the 100000 item array
+		console.time("xLarge radixSort")
+		radixSort(xLargeArray)
+		console.timeEnd("xLarge radixSort")
+
+		// finally, with the 1000000 item array
+		// console.time("xxLarge radixSort")
+		// radixSort(xxLargeArray)
+		// console.timeEnd("xxLarge radixSort")
+
+
+
+
+
+
+
+
+
+
+
+
+
+		/* 
+
+		YOU DON'T NEED TO TOUCH THIS 
+
+		this is the function that gets called above 
+		to generate the arrays of randomized numbers
+
+		*/
+		function makeArray(number) {
+			let array = []
+			for (let i=0; i < number; ++i) {
+				array[i]=i;
+			}
+
+			let tmp, current, top = array.length;
+
+			if(top) {
+				while(--top) {
+					current = Math.floor(Math.random() * (top + 1));
+					tmp = array[current];
+					array[current] = array[top];
+					array[top] = tmp;
+				}
+			}
+			return array;
+		}
+
+	</script>
 
 	</body>
 </html>
